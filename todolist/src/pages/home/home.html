@@ -1,0 +1,25 @@
+<ion-content>
+  <!-- <button ion-button color="light" clear>Light Clear</button> -->
+
+  <ion-item>
+      <ion-label fixed>Filter</ion-label>
+    <ion-input type="text" [(ngModel)]="keywords"></ion-input>
+  </ion-item>
+
+  <ion-list>
+    <ion-item *ngFor="let todo of todos | myFilter: keywords">
+      {{todo.title}}
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Add Todo</ion-label>
+      <ion-input type="text" [(ngModel)]="todo.title"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="addTodo()">Add</button>
+
+</ion-content>
